@@ -5,6 +5,7 @@ import com.example.BookBack.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -15,11 +16,19 @@ public class BookService {
     }
 
     public List<Book> getAll(){
-        return bookRepository.getAll();
+        return bookRepository.findAll();
+    }
+
+    public Optional<Book> getById(int id){
+        return bookRepository.findById(id);
+    }
+
+    public void deleteById(int id){
+        bookRepository.deleteById(id);
     }
 
     public void postBook(Book book){
-        bookRepository.addBook(book);
+        bookRepository.save(book);
     }
 
 }

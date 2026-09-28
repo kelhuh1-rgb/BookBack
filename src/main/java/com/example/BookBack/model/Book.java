@@ -1,50 +1,63 @@
 package com.example.BookBack.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Book {
-    private int Id;
-    private String Title;
-    private String Author;
-    private int Pages;
 
-    public int getId(){
-        return Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String title;
+    private String author;
+    private int pages;
+
+    public Book(){
+
     }
 
-    public void setId(int Id){
-        this.Id = Id;
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
     public String getTitle(){
-        return Title;
+        return title;
     }
 
-    public void setTitle(String Title){
-        this.Title = Title;
+    public void setTitle(String title){
+        this.title = title;
     }
 
     public String getAuthor(){
-        return Author;
+        return author;
     }
 
-    public void setAuthor(String Author){
-        this.Author = Author;
+    public void setAuthor(String author){
+        this.author = author;
     }
 
     public int getPages(){
-        return Pages;
+        return pages;
     }
 
-    public void setPages(int Pages){
-        this.Pages = Pages;
+    public void setPages(int pages){
+        this.pages = pages;
     }
 
     @Override
     public String toString(){
-        return "Book's id is " + Id +
-                " title is " + Title +
-                " author is " + Author +
-                " pages " + Pages;
+        return "Book's id is " + id +
+                " title is " + title +
+                " author is " + author +
+                " pages " + pages;
     }
 
 

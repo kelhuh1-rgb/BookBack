@@ -9,8 +9,4 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
-
-    void addBook(Book book);
-
-    List<Book> getAll();
 }
