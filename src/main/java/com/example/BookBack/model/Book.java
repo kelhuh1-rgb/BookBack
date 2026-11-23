@@ -1,10 +1,11 @@
 package com.example.BookBack.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class Book {
 
@@ -15,41 +16,15 @@ public class Book {
     private String author;
     private int pages;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     public Book(){
 
     }
 
-
-    public int getId(){
-        return id;
-    }
-
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public String getTitle(){
-        return title;
-    }
-
-    public void setTitle(String title){
-        this.title = title;
-    }
-
-    public String getAuthor(){
-        return author;
-    }
-
-    public void setAuthor(String author){
-        this.author = author;
-    }
-
-    public int getPages(){
-        return pages;
-    }
-
-    public void setPages(int pages){
-        this.pages = pages;
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
     }
 
     @Override
